@@ -1,0 +1,43 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+   View your NHS letter online
+{% endblock %}
+
+{% block beforeContent %}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>View your NHS letter online</h1>
+      <p class="nhsuk-lede-text">
+        Use this service to view a new letter.
+      </p>
+
+      <p class="nhsuk-body">
+        You have received link via text message which allows you to access a new letter sent to you from the NHS.
+      </p>
+
+      <h2 class="nhsuk-heading">
+        Before you start
+      </h2>
+      
+      <p class="nhsuk-body">
+        Before you can access the letter, we'll ask for your date of birth to confirm your identity.
+      </p>
+      <p class="nhsuk-body">
+        If you're using this service for someone else, enter their details.
+      </p>
+
+      {{ button({
+        text: "Start now",
+        href: "dob"
+      }) }}
+
+    </div>
+  </div>
+{% endblock %}
