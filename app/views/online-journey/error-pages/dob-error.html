@@ -1,0 +1,80 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  What is your date of birth?
+{% endblock %}
+
+{% set pageHeading = "What is your date of birth?" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "index"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <form id="form" method="post" action="/online-journey/index" novalidate="novalidate">
+
+        <legend class="nhsuk-fieldset__legend nhsuk-fieldset__legend--xl">
+          <h1 class="nhsuk-fieldset__heading">
+            {{ pageHeading }}
+          </h1>
+        </legend>
+
+        {{ dateInput({
+          id: "dob-day-error",
+          namePrefix: "dob-empty-error",
+          hint: {
+              text: "For example, 31 3 1980"
+          },
+          errorMessage: {
+              text: "You need to enter your date of birth"
+          },
+          items: [
+              {
+              name: "day",
+              classes: "nhsuk-input--width-2 nhsuk-input--error",
+              value: 15
+              },
+              {
+              name: "month",
+              classes: "nhsuk-input--width-2 nhsuk-input--error",
+              value: 3
+              },
+              {
+              name: "year",
+              classes: "nhsuk-input--width-4 nhsuk-input--error",
+              value: 2084
+              }
+          ]
+          }) }}
+
+        {{ button({
+          text: "Continue",
+          href: "confirmation"
+        }) }}
+        
+      </form>
+
+    </div>
+  </div>
+
+  <!-- Your JavaScript code goes here -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // JavaScript code to be executed after the page is loaded
+      const form = document.getElementById("form");
+      form.addEventListener("submit", function(event) {
+        alert("Form submitted!");
+      });
+    });
+  </script>
+
+{% endblock %}

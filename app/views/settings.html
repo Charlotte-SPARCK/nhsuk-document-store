@@ -6,7 +6,14 @@
   NHS prototype
 {% endblock %}
 
+
+
 {% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
 {% endblock %}
 
 {% block content %}

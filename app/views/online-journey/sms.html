@@ -1,0 +1,43 @@
+{% extends 'layout-ios-sms.html' %}
+
+{% block content %}
+<div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="/images/contact-photo.png" alt="User Avatar" class="avatar">
+        <span class="user-name">NHS</span>
+      </div>
+      <!-- <div class="header-right">
+        <button class="info-button">i</button>
+      </div> -->
+    </header>
+
+    <!-- Messages Container -->
+    <div class="messages-container">
+      <!-- Incoming Message -->
+      <div class="message incoming">
+        <div class="message-content">
+            <p>Dear [Patient],</p>
+
+            <p>This is [NHSDigiPost].</p>
+            
+            <p>You have received a new digital letter from [sender], sent at [date, time].</p>
+            
+            <p>You can use this link to log in and read your letter online: <a href="landing-page">www.nhs.net/url</a></p>
+            
+            <p>Thanks,</p>
+            <p>[NHSDigiPost]</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Input -->
+    <div class="input-container">
+      <input type="text" placeholder="Type a message..." class="message-input">
+      <button class="send-button">Send</button>
+    </div>
+  </div>
+  
+
+{% endblock %}

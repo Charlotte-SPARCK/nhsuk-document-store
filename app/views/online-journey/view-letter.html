@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  Indentity confirmed
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "confirmation"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+        <embed src="/docs/Cervix-Patient-Recall-Letter-Sample.pdf#toolbar=0&navpanes=0&scrollbar=0" width="100%" height="1000px" type="application/pdf">
+
+    </div>
+  </div>
+{% endblock %}
