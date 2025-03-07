@@ -14,7 +14,7 @@
   {% endif %}
 
   <div class="ios-body">
-    <div class="ios-wallpaper"></div>
+    <div class="android-wallpaper"></div>
     
     {% if statusBar === true %}
     <div class="ios-status-bar">
@@ -30,8 +30,8 @@
     </div>
     {% endif %}
     
-    <div class="ios-time" id="time">15:00</div>
-    <div class="ios-date" id="date">Tuesday, February 25</div>
+    <div class="android-time" id="time">15:00</div>
+    <div class="android-date" id="date">Tuesday, February 25</div>
 
     {% block content %}
     {% endblock %}
@@ -106,32 +106,4 @@
         }
     });
   </script>
-
-<script>
-  // Wait for the DOM to be fully loaded
-  document.addEventListener("DOMContentLoaded", function() {
-      // Get the element with ID "android-notification"
-      const notification = document.getElementById("android-notification");
-      
-      // Initially make sure it's hidden and set up for animation
-      if (notification) {
-          // Set initial styles
-          notification.style.opacity = "0";
-          notification.style.display = "none";
-          notification.style.transition = "opacity 0.5s ease-in-out";
-          
-          // Set a timeout to show the element after 2 seconds
-          setTimeout(function() {
-              // Make the element visible but still transparent
-              notification.style.display = "flex";
-              
-              // Force browser to recognize the display change before starting animation
-              setTimeout(function() {
-                  // Trigger the fade-in
-                  notification.style.opacity = "1";
-              }, 10);
-          }, 2000); // 2000 milliseconds = 2 seconds
-      }
-  });
-</script>
 {% endblock %}

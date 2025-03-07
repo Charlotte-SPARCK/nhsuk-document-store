@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "Sign in to the NHS App" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">Enter your email address</h1>
+
+      <p class="nhsuk-body">If you have used the NHS App or other NHS websites, you should enter the email address you used to register for them.</p>
+      
+      <p class="nhsuk-body">We will check if you have an NHS login. If not, you can set one up.</p>
+
+      {{ input({
+        label: {
+          text: "Email address"
+        },
+        id: "email",
+        name: "email"
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        classes: "nhsapp-button",
+        href: "login-password"
+      }) }}
+
+      {{ insetText({
+        html: "<h2>What is NHS login?</h2><p>NHS login allows you to securely access health websites and apps with just your email address and a password.</p>"
+      }) }}
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% block pageScripts %}
+    
+{% endblock %}
+
+  
+
+

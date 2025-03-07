@@ -80,7 +80,7 @@
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
         {% if "Unread" in data['message-status'] and data['message1read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] === "true" %}
-        {% if "Portland Street Great Westood Surgery" in data['message-sender'] or data['message-sender'] == "" %}
+        {% if "Cervical Screening" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
         <li class="nhsapp-card">
           <div class="nhsapp-card__container nhsuk-u-margin-left-6">
@@ -91,7 +91,7 @@
                 </span>
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
-              <form id="message1" method="post" action="/pages/messages/message-1">
+              <form id="message1" method="post" action="/pages/messages/view-letter">
                 {% if data['message1read'] === "false" %}
                 <input type="hidden" name="message1read" value="true">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
@@ -99,12 +99,12 @@
                 <a href="#1" onclick="document.getElementById('message1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
                   {% if data['message1read'] === "true" %}
                   <span class="nhsuk-u-visually-hidden">Read message from </span>
-                    Portland Street Great Westood Surgery
+                  Cervical screening
                   {% else %}
                     <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
                       <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
                       <span class="nhsuk-u-visually-hidden">Unread message from </span>
-                    </span>Portland Street Great Westood Surgery
+                    </span>Cervical screening
                   {% endif %}
                   <span class="nhsuk-u-visually-hidden"> received today at 1:02pm</span> 
                 </a>
@@ -112,7 +112,9 @@
               <div class="nhsapp-card__below">
                 <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
                   <span class="nhsuk-u-visually-hidden"> with preview message of </span>
-                  Patient survey reminder. The Patient feedback survey is about to close. Have your say about Portland Street Great Westood Surgery by providing us with your thoughts. 
+                  Dear Jane Sample,
+                  It's time for your cervix screening. Take action now to prevent cervical cancer. Your last cervix screening was:
+                  [YYYY/MM/DD]. Please ignore this notice if you've had cervix screening (i.e. Pap test or self-screening) in the last 3 months. 
                 </p>
               </div>
             </div>
@@ -134,15 +136,15 @@
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
               <form id="message2" method="post" action="/pages/messages/message-2">
-                {% if data['message2read'] === "false" %}
+                {% if data['message2read'] === "true" %}
                 <input type="hidden" name="message2read" value="true">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
                 {% endif %}
                 {% if data['replySent'] === "true" %}
-                <input type="hidden" name="replySentFocus" value="flase">
+                <input type="hidden" name="replySentFocus" value="false">
                 {% endif %}
                 <a href="#2" onclick="document.getElementById('message2').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
-                  {% if data['message2read'] === "true" %}
+                  {% if data['message2read'] === "false" %}
                   <span class="nhsuk-u-visually-hidden">Read message from </span>
                     Range surgery
                   {% else %}

@@ -13,19 +13,23 @@
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-three-quarters">
 
-      <h1>NHS Document Store</h1>
+      <h1>NHS Digital Letters</h1>
       <p class="nhsuk-lede-text">
-        Prototypes to test new design styles, components and patterns for the NHS Document Store.
+        Prototypes to test new journey's for the NHS Digital Letters project.
       </p>
-
-      <ul clas="nhsuk-list">
-        <li>
-          <a href="/online-journey/">Online Service Journey</a>
-        </li>
-        <li>
-          <a href="/app-journey/">NHS App Journey</a>
-        </li>
-      </ul>
+      <form id="osForm-home" method="POST">
+        <ul clas="nhsuk-list">
+          <li>
+            <a href="javascript:void(0);" onclick="submitForm()">NHS App Native Journey</a> - A journey for users who have the NHS App installed
+          </li>
+          <li>
+            <a href="">NHS App Online Journey</a> - A journey for users who DO NOT have the NHS App
+          </li>
+          <!-- <li>
+            <a href="/online-journey/">Online Service Journey</a>
+          </li> -->
+        </ul>
+      </form>
 
       <h2>Prototype settings</h2>
       <p>You can <a href="/settings">use settings to change the prototype journey.</a></p> 
@@ -33,4 +37,50 @@
 
     </div>
   </div>
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  // Function to detect the operating system
+  function detectOperatingSystem() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Check for iOS
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+      }
+      // Check for Android
+      else if (/android/i.test(userAgent)) {
+          return "Android";
+      }
+      // If neither, return Unknown
+      else {
+          return "Unknown OS";
+      }
+  }
+
+  // Function to modify the form action based on OS detection
+  function updateFormAction() {
+      const os = detectOperatingSystem();
+      const form = document.getElementById('osForm-home');
+
+      // Modify the form action based on the detected OS
+      if (os === "iOS") {
+          form.action = "/app-native-journey/index";  // URL for iOS users
+      } else if (os === "Android") {
+          form.action = "/app-native-journey/android-lockscreen";  // URL for Android users
+      } else {
+          form.action = "/app-native-journey/index";  // URL for users with unknown OS
+      }
+  }
+
+  // Function to submit the form when the link is clicked
+  function submitForm() {
+      document.getElementById("osForm-home").submit();
+  }
+
+  // Update form action when the page loads
+  window.onload = updateFormAction;
+  console.log("Operating System:", detectOperatingSystem());
+</script>
 {% endblock %}

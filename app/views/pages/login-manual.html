@@ -1,0 +1,81 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "Sign in to the NHS App" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">Access your NHS services</h1>
+
+      <p class="nhsuk-body">Log in to your NHS account to access services online on your computer, tablet or mobile phone. You do not need to download anything.</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>order repeat prescriptions</li>
+        <li>book and manage appointments</li>
+        <li>get health information and advice</li>
+        <li>view your health record securely</li>
+        <li>view your NHS number</li>
+      </ul>
+
+      <p class="nhsuk-body">Log in to your account to:</p>
+
+      <h2 class="nhsuk-heading-m">Who can have an NHS account</h2>
+
+      <p class="nhsuk-body">You can have an account if you are:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>registered with a GP surgery in England</li>
+        <li>aged 13 or over</li>
+      </ul>
+
+      <p class="nhsuk-body"><a href="/">Find out more about who can have an NHS account</a></p>
+      
+
+      {{ button({
+        text: "Continue",
+        classes: "nhsuk-button--blue",
+        href: "login-email"
+      }) }}
+
+
+      <ul class="nhsuk-grid-row nhsuk-card-group">
+        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
+      
+          <div class="nhsuk-card nhsuk-card--clickable">
+            <div class="nhsuk-card__content">
+              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
+                Get the NHS App on your smartphone or tablet
+              </h5>
+              <p>
+                You can also log in to your NHS account using the NHS App.
+              </p>
+              <p><img class="" src='/images/ios-app-store.png' alt=""></p>
+              <p><img class="" src='/images/google-play-store.png' alt=""></p>     
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <h2 class="nhsuk-heading-m">Who can have an NHS account</h2>
+
+      <p class="nhsuk-body">To find out more about health conditions, symptoms, treatments and how to get help, without logging in:</p>
+
+      {{ actionLink({
+        text: "Go to the NHS website",
+        href: "#"
+      }) }}
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% block pageScripts %}
+    
+{% endblock %}
+
+  
+
+
