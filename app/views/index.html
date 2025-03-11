@@ -38,6 +38,50 @@
 
 {% block pageScripts %}
 <script>
+  document.getElementById("appNative").addEventListener("click", function() {
+    // The parameter you want to add to the URL
+    var parameterValue = "native";
+
+    // Save the value to localStorage
+    localStorage.setItem("parameter", parameterValue);
+
+    // Get the current URL
+    var currentUrl = window.location.href;
+
+    // Check if the URL already has parameters
+    if (currentUrl.indexOf('?') === -1) {
+      // If no parameters exist, add the parameter
+      window.location.href = currentUrl + "?parameter=" + parameterValue;
+    } else {
+      // If parameters exist, append the new parameter
+      window.location.href = currentUrl + "&parameter=" + parameterValue;
+    }
+  });
+
+
+  document.getElementById("appOnline").addEventListener("click", function() {
+    // The parameter you want to add to the URL
+    var parameterValue = "online";
+
+    // Save the value to localStorage
+    localStorage.setItem("parameter", parameterValue);
+
+    // Get the current URL
+    var currentUrl = window.location.href;
+
+    // Check if the URL already has parameters
+    if (currentUrl.indexOf('?') === -1) {
+      // If no parameters exist, add the parameter
+      window.location.href = currentUrl + "?parameter=" + parameterValue;
+    } else {
+      // If parameters exist, append the new parameter
+      window.location.href = currentUrl + "&parameter=" + parameterValue;
+    }
+  });
+
+
+
+
   // Function to detect the operating system
   function detectOperatingSystem() {
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;

@@ -167,10 +167,13 @@ app.use('/nhsapp-frontend', express.static(path.join(__dirname, 'node_modules/nh
 // Use custom application routes
 app.use('/', routes);
 
+
 // Automatically route pages
 app.get(/^([^.]+)$/, (req, res, next) => {
   automaticRouting.matchRoutes(req, res, next);
 });
+
+
 
 // Example template routes
 app.use('/example-templates', exampleTemplatesApp);

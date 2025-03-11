@@ -15,3 +15,11 @@
   </a>
 
 {% endblock %}
+
+{% block pageScripts %}
+<script>
+  const parameter = localStorage.getItem("parameter")
+
+  console.log(parameter);
+</script>
+{% endblock %}

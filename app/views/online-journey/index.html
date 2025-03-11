@@ -15,3 +15,19 @@
   </a>
 
 {% endblock %}
+
+{% block pageScripts %}
+<script>
+    // Example function to change the query parameter in the URL
+    function setQueryParam(name, value) {
+        const url = new URL(window.location.href); // Get the current URL
+        url.searchParams.set(name, value);  // Set or update the query parameter
+        window.history.pushState({}, "", url); // Update the URL without reloading the page
+    }
+
+    // Usage: Set or update the "journey" query parameter to "1"
+    setQueryParam("journey", "1");
+
+
+</script>
+{% endblock %}

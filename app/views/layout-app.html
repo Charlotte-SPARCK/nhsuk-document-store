@@ -62,8 +62,7 @@
 <!-- HEADER -->
 {% block header %}
 
-  <!-- WEB AND NATIVE - VARIABLE 'WEB' ON PAGE DECLARES WHAT TO DISPLAY -->
-  {% if data['web'] === "yes" %}
+  {% if parameter == "online" %}
     {% include "components/global-navigation-web/include-updated.html" %}
   {% else %}
     {% include "components/global-navigation-native/include.html" %}
@@ -105,3 +104,4 @@
   {% endif %}
 
 {% endblock %}
+
