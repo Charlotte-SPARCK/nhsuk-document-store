@@ -18,14 +18,12 @@
         Prototypes to test new journey's for the NHS Digital Letters project.
       </p>
         <ul clas="nhsuk-list">
-          <form id="osForm-native" method="POST">
+          <form id="osForm" method="POST">
             <li>
-              <a href="javascript:void(0);" onclick="submitFormNative()">NHS App Native Journey</a> - A journey for users who have the NHS App installed
+              <a href="javascript:void(0);" id="appNative">NHS App Native Journey</a> - A journey for users who have the NHS App installed
             </li>
-          </form>
-          <form id="osForm-online" method="POST">
             <li>
-              <a href="javascript:void(0);" onclick="submitFormOnline()">NHS App Online Journey</a> - A journey for users who DO NOT have the NHS App
+              <a href="javascript:void(0);" id="appOnline">NHS App Online Journey</a> - A journey for users who DO NOT have the NHS App
             </li>
           </form>
         </ul>
@@ -58,52 +56,35 @@
       }
   }
 
-  // Function to modify the form action based on OS detection
-  function updateFormActionNative() {
+
+    // Function to update the link URLs based on OS
+      function updateLinks() {
       const os = detectOperatingSystem();
-      const form = document.getElementById('osForm-native');
 
-      // Modify the form action based on the detected OS
+      const appNative = document.getElementById('appNative');
+      const appOnline = document.getElementById('appOnline');
+
+      // Modify the URLs based on the OS detected
       if (os === "iOS") {
-          form.action = "/app-native-journey/index";  // URL for iOS users
+        appNative.href = "/app-native-journey/index";
+        appOnline.href = "/app-online-journey/index";
       } else if (os === "Android") {
-          form.action = "/app-native-journey/android-lockscreen";  // URL for Android users
+        appNative.href = "/app-native-journey/android-lockscreen";
+        appOnline.href = "/app-online-journey/android-lockscreen";
       } else {
-          form.action = "/app-native-journey/index";  // URL for users with unknown OS
+        // For unknown OS, you can set default URLs
+        appNative.href = "/app-native-journey/index";
+        appOnline.href = "/app-online-journey/index";
       }
-  }
+    }
 
-  // Function to modify the form action based on OS detection
-  function updateFormActionOnline() {
-      const os = detectOperatingSystem();
-      const form = document.getElementById('osForm-online');
-
-      // Modify the form action based on the detected OS
-      if (os === "iOS") {
-          form.action = "/app-online-journey/index";  // URL for iOS users
-      } else if (os === "Android") {
-          form.action = "/app-online-journey/android-lockscreen";  // URL for Android users
-      } else {
-          form.action = "/app-online-journey/index";  // URL for users with unknown OS
-      }
-  }
+    // Call the updateLinks function when the page loads
+    window.onload = updateLinks;
 
 
-  // Function to submit the form when the link is clicked
-  function submitFormNative() {
-      updateFormActionNative();  // Ensure form action is updated before submitting
-      document.getElementById("osForm-native").submit();
-  }
 
-  function submitFormOnline() {
-      updateFormActionOnline();  // Ensure form action is updated before submitting
-      document.getElementById("osForm-online").submit();
-  }
-  // Update form action when the page loads
-  window.onload = function() {
-      updateFormActionNative();  // Initialize form actions
-      updateFormActionOnline();  // Initialize form actions
-  };
-  console.log("Operating System:", detectOperatingSystem());
+    console.log("Operating System:", detectOperatingSystem(
+
+    ));
 </script>
 {% endblock %}

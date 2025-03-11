@@ -1,0 +1,44 @@
+
+/* App promo */
+
+.login_nhs-app-mobile-show {
+    display: none;
+}
+
+@media (max-width: 769px) {
+    .login_nhs-app-mobile-hide {
+        display: none;
+    }
+}
+
+@media (max-width: 769px) {
+    .login_nhs-app-mobile-show {
+        display: block;
+        margin-bottom: 36px;
+    }
+}
+
+/* Custom buttons */
+
+.nhsuk-button--blue {
+    background-color: #005EB8;
+    box-shadow: 0 4px 0 rgb(0, 47, 92);
+}
+
+/* Error Messaging */
+
+.error {
+    display: none;
+}
+
+#email-error {
+    display: none;
+}
+
+#password-error {
+    display: none;
+}
+
+
+
+

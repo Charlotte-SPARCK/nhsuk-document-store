@@ -12,13 +12,36 @@
       <p class="nhsuk-body">Log in to your NHS account to access services online on your computer, tablet or mobile phone. You do not need to download anything.</p>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>order repeat prescriptions</li>
-        <li>book and manage appointments</li>
-        <li>get health information and advice</li>
-        <li>view your health record securely</li>
-        <li>view your NHS number</li>
+        <li>Order repeat prescriptions</li>
+        <li>Book and manage appointments</li>
+        <li>Get health information and advice</li>
+        <li>View your health record securely</li>
+        <li>View your NHS number</li>
       </ul>
+    </div>
 
+    <div class="nhsuk-grid-column-one-third login_nhs-app-mobile-hide">
+      <div class="nhsuk-card nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0">
+        <div class="nhsuk-card__content" id="desktop-app-panel">
+          <p><strong>Get the NHS App on your smartphone or tablet</strong></p>
+          <p>You can also log in to your NHS account using the NHS App.</p>
+          <ul class="nhsuk-list">
+            <li>
+              <a href="#" class="nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-3">
+                <img alt="Download on the App Store" src="/images/ios-app-store.png">
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <img alt="Get it on Google Play" src="/images/google-play-store.png">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="nhsuk-grid-column-two-thirds">
       <p class="nhsuk-body">Log in to your account to:</p>
 
       <h2 class="nhsuk-heading-m">Who can have an NHS account</h2>
@@ -26,12 +49,11 @@
       <p class="nhsuk-body">You can have an account if you are:</p>
 
       <ul class="nhsuk-list nhsuk-list--bullet">
-        <li>registered with a GP surgery in England</li>
-        <li>aged 13 or over</li>
+        <li>Registered with a GP surgery in England</li>
+        <li>Aged 13 or over</li>
       </ul>
 
       <p class="nhsuk-body"><a href="/">Find out more about who can have an NHS account</a></p>
-      
 
       {{ button({
         text: "Continue",
@@ -39,26 +61,26 @@
         href: "login-email"
       }) }}
 
-
-      <ul class="nhsuk-grid-row nhsuk-card-group">
-        <li class="nhsuk-grid-column-one-third nhsuk-card-group__item">
-      
-          <div class="nhsuk-card nhsuk-card--clickable">
-            <div class="nhsuk-card__content">
-              <h5 class="nhsuk-card__heading nhsuk-heading-xs">
-                Get the NHS App on your smartphone or tablet
-              </h5>
-              <p>
-                You can also log in to your NHS account using the NHS App.
-              </p>
-              <p><img class="" src='/images/ios-app-store.png' alt=""></p>
-              <p><img class="" src='/images/google-play-store.png' alt=""></p>     
-            </div>
+      <div class="login_nhs-app-mobile-show">
+        <div class="nhsuk-card nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0">
+          <div class="nhsuk-card__content" id="desktop-app-panel">
+            <p><strong>Get the NHS App on your smartphone or tablet</strong></p>
+            <p>You can also log in to your NHS account using the NHS App.</p>
+            <ul class="nhsuk-list">
+              <li>
+                <a href="#" class="nhsuk-u-margin-bottom-2 nhsuk-u-margin-right-3">
+                  <img alt="Download on the App Store" src="/images/ios-app-store.png">
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img alt="Get it on Google Play" src="/images/google-play-store.png">
+                </a>
+              </li>
+            </ul>
           </div>
-        </li>
-      </ul>
-
-      <h2 class="nhsuk-heading-m">Who can have an NHS account</h2>
+        </div>
+      </div>
 
       <p class="nhsuk-body">To find out more about health conditions, symptoms, treatments and how to get help, without logging in:</p>
 
@@ -66,16 +88,13 @@
         text: "Go to the NHS website",
         href: "#"
       }) }}
-
     </div>
-  </div>
 
-  {% endblock %}
+  </div>
+</div>
+
+{% endblock %}
 
 {% block pageScripts %}
     
 {% endblock %}
-
-  
-
-
