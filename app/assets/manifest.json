@@ -8,7 +8,7 @@
   "background_color": "#f0f4f5",
   "icons": [
     {
-      "src": "public/images/nhs-icon-512.png",
+      "src": "/images/nhs-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
