@@ -3,7 +3,7 @@
 {% set hub = "Messages" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "messages/your-messages" %}
+{% set backLinkURL = "your-messages" %}
 
 {% set pageHeading = "Filter by" %}
 
@@ -18,7 +18,7 @@
         titleSmall: true
       })}}
 
-      <form id="form" method="post" action="messages/your-messages" novalidate="novalidate">
+      <form id="form" method="post" action="your-messages" novalidate="novalidate">
 
         {{ checkboxes({
           idPrefix: "message-status",
@@ -83,7 +83,7 @@
             <span class="nhsuk-u-visually-hidden"> filters</span>
           </button>
         </form>
-          <form id="form-clear" method="post" action="messages/message-filters" novalidate="novalidate">
+          <form id="form-clear" method="post" action="message-filters" novalidate="novalidate">
             <input type="hidden" name="message-status" value="">
             <input type="hidden" name="message-sender" value="">
             {{ button({
