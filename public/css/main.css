@@ -9741,7 +9741,7 @@ html:has(.app-iframe__page) {
   width: 100%;
   height: 100%;
   background-color: #8CDCFE;
-  background-image: url("https://nhs-my.sharepoint.com/:i:/r/personal/charlotte_jenkins25_nhs_net/Documents/NHS-Digital-Letters/Prototypes/images/ios-wallpaper.png");
+  background-image: url("https://eu-north-1.console.aws.amazon.com/s3/object/digital-letters?region=eu-north-1&bucketType=general&prefix=documentation-example/ios-wallpaper.png");
   background-size: cover;
   background-position: top;
   z-index: 1;
@@ -9902,7 +9902,7 @@ html:has(.app-iframe__page) {
   width: 100%;
   height: 100%;
   background-color: #8CDCFE;
-  background-image: url("https://nhs-my.sharepoint.com/:i:/r/personal/charlotte_jenkins25_nhs_net/Documents/NHS-Digital-Letters/Prototypes/images/android-wallpaper.jpg");
+  background-image: url("https://eu-north-1.console.aws.amazon.com/s3/object/digital-letters?region=eu-north-1&bucketType=general&prefix=documentation-example/android-wallpaper.jpg");
   background-size: cover;
   background-position: top;
   z-index: 1;
