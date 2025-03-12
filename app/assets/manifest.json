@@ -8,7 +8,7 @@
   "background_color": "#f0f4f5",
   "icons": [
     {
-      "src": "https://eu-north-1.console.aws.amazon.com/s3/object/digital-letters?region=eu-north-1&bucketType=general&prefix=documentation-example/nhs-icon-512.png",
+      "src": "/images/nhs-icon-512.png",
       "sizes": "512x512",
       "type": "image/png"
     }
