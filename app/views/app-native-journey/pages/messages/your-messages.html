@@ -3,7 +3,7 @@
 {% set hub = "Messages" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "messages-" + data['accountType'] %}
+{% set backLinkURL = "../messages-" + data['accountType'] %}
 
 {% set pageHeading = "Your messages" %}
 
@@ -91,7 +91,7 @@
                 </span>
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
-              <form id="message1" method="post" action="messages/view-letter">
+              <form id="message1" method="post" action="view-letter">
                 {% if data['message1read'] === "false" %}
                 <input type="hidden" name="message1read" value="true">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
