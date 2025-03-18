@@ -3,7 +3,7 @@
 {% set hub = "Messages" %}
 
 {% set backLink = true %}
-{% set backLinkURL = "../messages-" + data['accountType'] %}
+{% set backLinkURL = "../home-" + data['accountType'] %}
 
 {% set pageHeading = "Your messages" %}
 
@@ -71,7 +71,7 @@
       </div>
       
 
-      {% if "Unread" in data['message-status'] and "Read" not in data['message-status'] and data['message1read'] === "true" and data['message2read'] === "true" %}
+      {% if "Unread" in data['message-status'] and "Read" not in data['message-status'] and data['message1read'] == "true" and data['message2read'] == "true" %}
 
       <p>There are no results matching this filter.</p>
 
@@ -79,7 +79,7 @@
 
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
-        {% if "Unread" in data['message-status'] and data['message1read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] === "true" %}
+        {% if "Unread" in data['message-status'] and data['message1read'] == "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] == "true" %}
         {% if "Cervical Screening" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
         <li class="nhsapp-card">
@@ -91,20 +91,20 @@
                 </span>
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
-              <form id="message1" method="post" action="view-letter">
-                {% if data['message1read'] === "false" %}
+              <form id="message1" method="post" action="message">
+                {% if data['message1read'] == "false" %}
                 <input type="hidden" name="message1read" value="true">
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
                 {% endif %}
                 <a href="#1" onclick="document.getElementById('message1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
-                  {% if data['message1read'] === "true" %}
+                  {% if data['message1read'] == "true" %}
                   <span class="nhsuk-u-visually-hidden">Read message from </span>
-                  Cervical screening
+                  NHS Vaccines
                   {% else %}
                     <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
                       <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
                       <span class="nhsuk-u-visually-hidden">Unread message from </span>
-                    </span>Cervical screening
+                    </span>NHS Vaccines
                   {% endif %}
                   <span class="nhsuk-u-visually-hidden"> received today at 1:02pm</span> 
                 </a>
@@ -113,8 +113,7 @@
                 <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
                   <span class="nhsuk-u-visually-hidden"> with preview message of </span>
                   Dear Jane Sample,
-                  It's time for your cervix screening. Take action now to prevent cervical cancer. Your last cervix screening was:
-                  [YYYY/MM/DD]. Please ignore this notice if you've had cervix screening (i.e. Pap test or self-screening) in the last 3 months. 
+                  We are writing to invite you to book an appointment to receive your seasonal vaccination. As part of the NHS vaccination programme, you are now eligible to receive the vaccine and we encourage you to take up this opportunity to help protect yourself and others.
                 </p>
               </div>
             </div>
@@ -123,7 +122,7 @@
         {% endif %}
         {% endif %}
 
-        {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
+        {% if "Unread" in data['message-status'] and data['message2read'] == "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] == "true" %}
         {% if "Range Surgery" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 2 -->
         <li class="nhsapp-card">
