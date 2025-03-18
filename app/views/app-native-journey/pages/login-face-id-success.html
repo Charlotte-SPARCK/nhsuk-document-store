@@ -26,14 +26,55 @@
 
   {% block pageScripts %}
 
+
+  
+
     {% if data['loginError'] === "no" %}
-      <script>
-        $(document).ready(function () {
-            // Handler for .ready() called.
-            window.setTimeout(function () {
-                location.href = "home-p9";
-            }, 1000);
-        });
+    <script>
+      // Function to detect the operating system
+      function detectOperatingSystem() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    
+        // Check for iOS
+        if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+        }
+        // Check for Android
+        else if (/android/i.test(userAgent)) {
+          return "Android";
+        }
+        // If neither, return Unknown OS
+        else {
+          return "Unknown OS";
+        }
+      }
+    
+      // Function to update the link URLs based on OS
+      function updateLinks() {
+      const os = detectOperatingSystem();
+    
+        // You can update URLs or handle other OS-specific logic here
+        console.log("Operating System:", os);
+      }
+    
+      // Call the updateLinks function when the page loads
+      $(document).ready(function () {
+        // Update links when document is ready
+        updateLinks();
+    
+        // Redirect to a different URL based on OS after 1 second
+        window.setTimeout(function () {
+          const os = detectOperatingSystem(); // Detect the OS again inside the timeout function
+    
+          if (os === "iOS") {
+            location.href = "messages/your-messages"; // Redirect to iOS-specific URL
+          } else if (os === "Android") {
+            location.href = "home-p9"; // Redirect to Android-specific URL
+          } else {
+            location.href = "home-p9"; // Default URL for unknown OS
+          }
+        }, 1000);
+      });
       </script>
     {% else %}
       <script>
