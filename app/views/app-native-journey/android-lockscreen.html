@@ -18,14 +18,14 @@
 
 {% block pageScripts %}
 
-<script>
+    <script>
   const parameter = localStorage.getItem("parameter");
 
-  if (parameter === 'online') {
-    document.body.classList.add('nhs-app-web');
-    document.body.classList.remove('nhs-app-native');  // Corrected 'temove' to 'remove'
+if (parameter === 'online') {
+      document.body.classList.add('nhs-app-web');
+      document.body.classList.remove('nhs-app-native');  // Corrected 'temove' to 'remove'
   }
 
-  console.log(parameter);
-</script>
+console.log(parameter);
+    </script>
 {% endblock %}
