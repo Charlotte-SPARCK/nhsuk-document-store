@@ -12,7 +12,6 @@
     "prewatch": "gulp build",
     "watch": "gulp",
     "lint:js": "eslint -c ./linters/.eslintrc.js app.js lib/**/*.js app/*.js",
-    "check-types": "tsc --noEmit"
   },
   "author": "https://github.com/nhsuk/",
   "license": "MIT",
