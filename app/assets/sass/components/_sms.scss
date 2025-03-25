@@ -129,3 +129,54 @@
       padding: 8px 16px;
     }
   }
+
+
+.nhsuk-tabs {
+  background-color: #EFEFEF;
+}
+
+// .nhsuk-tabs__list-item {  
+//   background-color: #EFEFEF;
+//     float: none;
+//     margin: 0 auto;
+//     padding: 8px 24px;
+//     position: relative;
+//     text-align: center;
+//     display: table-cell;
+// }
+
+
+
+.nhsuk-tabs__list-item:before {
+  color: #212b32;
+  content: none;
+  /* margin-left: -32px; */
+  padding-right: 4px;
+}
+
+.nhsuk-tabs__list-item {
+    background-color: #EFEFEF;
+    float: none;
+    margin: 0 auto;
+    padding: 8px 24px;
+    position: relative;
+    text-align: center;
+    display: table-cell;
+
+    a {
+      text-decoration: none;
+    }
+}
+
+.nhsuk-tabs__list-item--selected {
+  background-color: #ffffff;
+  border: 1px solid #d8dde0;
+  border-bottom: 0;
+  margin-bottom: -1px;
+  margin-top: -4px;
+  padding-bottom: 13px;
+  padding-left: 23px;
+  padding-right: 23px;
+  padding-top: 11px;
+  position: relative;
+}

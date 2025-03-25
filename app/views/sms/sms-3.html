@@ -1,0 +1,67 @@
+{% extends 'layout-ios-sms.html' %}
+
+{% block content %}
+<div class="app-container">
+
+  <div class="nhsuk-tabs nhsuk-u-margin-bottom-0" data-module="nhsuk-tabs">
+  
+    <ul class="nhsuk-tabs__list nhsuk-u-margin-bottom-0">
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="sms-1">
+          SMS v1
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="sms-2">
+          SMS v2
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item nhsuk-tabs__list-item--selected">
+        <a class="nhsuk-tabs__tab" href="sms-3">
+          SMS v3
+        </a>
+      </li>
+  
+      <li class="nhsuk-tabs__list-item">
+        <a class="nhsuk-tabs__tab" href="sms-4">
+          SMS v4
+        </a>
+      </li>
+  
+    </ul>
+  </div>
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="/images/contact-photo.png" alt="User Avatar" class="avatar">
+        <span class="user-name">NHSApp</span>
+      </div>
+      <!-- <div class="header-right">
+        <button class="info-button">i</button>
+      </div> -->
+    </header>
+
+    <!-- Messages Container -->
+    <div class="messages-container" style="word-wrap: break-word; display: block;">
+      <!-- Incoming Message -->
+      <div class="message incoming">
+        <div class="message-content">
+          <p>You have received a new message from the NHS.</p>
+
+          <p>Open the NHS App to read it, or log in using: <a href="/" class="">https://www.nhsapp.service.nhs.uk/patient/messages/app-messaging</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Input -->
+    <div class="input-container">
+      <input type="text" placeholder="Type a message..." class="message-input">
+      <button class="send-button">Send</button>
+    </div>
+  </div>
+  
+
+{% endblock %}

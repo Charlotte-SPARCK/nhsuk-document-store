@@ -20,12 +20,16 @@
         <ul clas="nhsuk-list">
           <form id="osForm" method="POST">
             <li>
-              <a href="javascript:void(0);" id="appNative">NHS App Native Journey</a> - A journey for users who have the NHS App installed
+              <a href="app-native-journey/index" id="appNative">NHS App Native Journey</a> - A journey for users who have the NHS App installed
             </li>
             <li>
-              <a href="javascript:void(0);" id="appOnline">NHS App Online Journey</a> - A journey for users who DO NOT have the NHS App
+              <a href="app-online-journey/android-lockscreen" id="appOnline">NHS App Online Journey</a> - A journey for users who DO NOT have the NHS App
             </li>
           </form>
+
+            <li>
+              <a href="sms/sms-list">SMS Versions</a> - Versions of SMS copy for users to access their digital letter
+            </li>
         </ul>
 
       <h2>Prototype settings</h2>
@@ -37,51 +41,7 @@
 {% endblock %}
 
 {% block pageScripts %}
-<script>
-  document.getElementById("appNative").addEventListener("click", function() {
-    // The parameter you want to add to the URL
-    var parameterValue = "native";
-
-    // Save the value to localStorage
-    localStorage.setItem("parameter", parameterValue);
-
-    // Get the current URL
-    var currentUrl = window.location.href;
-
-    // Check if the URL already has parameters
-    if (currentUrl.indexOf('?') === -1) {
-      // If no parameters exist, add the parameter
-      window.location.href = currentUrl + "?parameter=" + parameterValue;
-    } else {
-      // If parameters exist, append the new parameter
-      window.location.href = currentUrl + "&parameter=" + parameterValue;
-    }
-  });
-
-
-  document.getElementById("appOnline").addEventListener("click", function() {
-    // The parameter you want to add to the URL
-    var parameterValue = "online";
-
-    // Save the value to localStorage
-    localStorage.setItem("parameter", parameterValue);
-
-    // Get the current URL
-    var currentUrl = window.location.href;
-
-    // Check if the URL already has parameters
-    if (currentUrl.indexOf('?') === -1) {
-      // If no parameters exist, add the parameter
-      window.location.href = currentUrl + "?parameter=" + parameterValue;
-    } else {
-      // If parameters exist, append the new parameter
-      window.location.href = currentUrl + "&parameter=" + parameterValue;
-    }
-  });
-
-
-
-
+<!-- <script>
   // Function to detect the operating system
   function detectOperatingSystem() {
       const userAgent = navigator.userAgent || navigator.vendor || window.opera;
@@ -124,11 +84,8 @@
 
     // Call the updateLinks function when the page loads
     window.onload = updateLinks;
-
-
-
     console.log("Operating System:", detectOperatingSystem(
 
     ));
-</script>
+</script> -->
 {% endblock %}

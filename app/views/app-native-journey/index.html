@@ -1,20 +1,100 @@
-{% extends 'layout-ios-locked-screen.html' %}
+{% extends 'layout.html' %}
 
-{% block content %}
-    
-  <a id="ios-notification" class="ios-notification" href="sms">
-    <img class="ios-notification-icon" src='/images/message_logo.png' alt="">
-    <div class="ios-notification-message">
-      <div class="ios-notification-app">NHSApp</div>
-      <div class="ios-notification-content">
-        <p class="nhsuk-body-s">You have new message.</p>
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
 
-      </div>
-    </div>
-    <div class="ios-notification-time">now</div>
-  </a>
-
+{% block pageTitle %}
+  NHS Document Store
 {% endblock %}
 
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>NHS Digital Letters</h1>
+      <p class="nhsuk-lede-text">
+        Prototypes to test new journey's for the NHS Digital Letters project.
+      </p>
+        <ul clas="nhsuk-list">
+          <form id="osForm" method="POST">
+            <li>
+              <a href="notification" id="native-sms1">SMS v1</a>
+              <p>1 Fragment with link, 155 characters, app inbox URL, greeting and more informal tone, says the message is in the NHS App</p>
+            </li>
+            <li>
+              <a href="sms-v2" id="native-sms2">SMS v2</a>
+              <p>1 Fragment with link, 144 characters, app homepage URL, no greeting, more formal</p>
+            </li>
+            <li>
+              <a href="sms-v3" id="native-sms3">SMS v3</a>
+              <p>2 Fragments with link, 165 characters, app inbox URL, no greeting, "read it" instead of "read your message"</p>
+            </li>
+            <li>
+              <a href="sms-v4" id="native-sms4">SMS v4</a> - 2 Fragments with link and ODS code, 171 characters, App inbox URL, Includes sender "GP Registration", No greeting, "Letter" instead of "message"
+            </li>
+          </form>
+        </ul>
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
 {% block pageScripts %}
+<script>
+  // Function to detect the operating system
+  function detectOperatingSystem() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Check for iOS
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+      }
+      // Check for Android
+      else if (/android/i.test(userAgent)) {
+          return "Android";
+      }
+      // If neither, return Unknown
+      else {
+          return "Unknown OS";
+      }
+  }
+
+
+    // Function to update the link URLs based on OS
+      function updateLinks() {
+      const os = detectOperatingSystem();
+
+      // const notification = document.getElementById('notification');
+      const noifyimg = document.querySelector('#notification img');
+
+      // Modify the URLs based on the OS detected
+      if (os === "iOS") {
+        // Change the image source to a new one
+        noifyimg.src = '/images/message_logo.png'; // You can replace with any image URL
+        
+      } else if (os === "Android") {
+        noifyimg.src = '/images/android-sms.png'; // You can replace with any image URL
+
+      } else {
+        // For unknown OS, you can set default URLs
+
+      }
+    }
+
+    // Call the updateLinks function when the page loads
+    window.onload = updateLinks;
+    console.log("Operating System:", detectOperatingSystem(
+
+    ));
+</script>
 {% endblock %}

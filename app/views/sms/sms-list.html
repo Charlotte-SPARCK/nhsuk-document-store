@@ -1,0 +1,61 @@
+{% extends 'layout.html' %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  NHS Document Store
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>NHS Digital Letters</h1>
+      <p class="nhsuk-lede-text">
+        Prototypes to test new journey's for the NHS Digital Letters project.
+      </p>
+        <p><a href="sms-1">Version 1</a></p> 
+        <ul clas="nhsuk-list">
+          <li>1 Fragment with link</li>
+          <li>155 characters</li>
+          <li>App inbox URL</li>
+          <li>Greeting and more informal tone</li>
+          <li>Says the message is in the NHS App</li>
+        </ul>  
+
+        <p><a href="sms-2">Version 2</a></p> 
+        <ul clas="nhsuk-list">
+          <li>1 Fragment with link</li>
+          <li>144 characters</li>
+          <li>App homepage URL</li>
+          <li>No greeting, more formal</li>
+        </ul>  
+
+        <p><a href="sms-3">Version 3</a></p> 
+        <ul clas="nhsuk-list">
+          <li>2 Fragments with link </li>
+          <li>165 characters</li>
+          <li>App inbox URL</li>
+          <li>No greeting, "read it" instead of "read your message"</li>
+        </ul>  
+
+        <p><a href="sms-4">Version 4</a></p> 
+        <ul clas="nhsuk-list">
+          <li>2 Fragments with link and ODS code</li>
+          <li>171 characters</li>
+          <li>App inbox URL</li>
+          <li>Includes sender "GP Registration"</li>
+          <li>No greeting</li>
+          <li>"Letter" instead of "message"</li>
+        </ul>  
+    </div>
+  </div>
+{% endblock %}
