@@ -33,3 +33,39 @@
   
 
 {% endblock %}
+
+{% block pageScripts %}
+<script>
+  // Function to get URL parameters
+  function getURLParameter(name) {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get(name);
+  }
+
+  // Function to display content based on URL parameter
+  function displayContent() {
+    const contentId = getURLParameter('content');
+    const contentDiv = document.getElementById('content');
+
+    // Set content based on the "content" parameter
+    switch (contentId) {
+      case '1':
+        contentDiv.innerHTML = '<h2>Content 1</h2><p>This is the content for Link 1.</p>';
+        break;
+      case '2':
+        contentDiv.innerHTML = '<h2>Content 2</h2><p>This is the content for Link 2.</p>';
+        break;
+      case '3':
+        contentDiv.innerHTML = '<h2>Content 3</h2><p>This is the content for Link 3.</p>';
+        break;
+      default:
+        contentDiv.innerHTML = '<h2>Content Not Found</h2><p>Sorry, no content was found for this link.</p>';
+        break;
+    }
+  }
+
+  // Call displayContent when the page loads
+  window.onload = displayContent;
+</script>
+
+{% endblock %}
