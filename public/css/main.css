@@ -9951,7 +9951,7 @@ html:has(.app-iframe__page) {
     flex-direction: column;
   }
   .iframe .password {
-    height: 59vh;
+    height: 60vh;
   }
 }
 
