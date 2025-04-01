@@ -1,11 +1,11 @@
-{% extends 'layout.html' %}
+{% extends 'layout-mobile.html' %}
 
 {% set pageHeading = "Sign in to the NHS App" %}
 
 {% block content %}
 
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
       
       <!-- Error Summary: Initially hidden -->
       {{ errorSummary({
@@ -45,9 +45,10 @@
 
       </form>
 
-      {{ insetText({
-        html: "<h2>What is NHS login?</h2><p>NHS login allows you to securely access health websites and apps with just your email address and a password.</p>"
-      }) }}
+      <div class="nhsuk-inset-text">
+        <h2>What is NHS login?</h2>
+        <p>NHS login allows you to securely access health websites and apps with just your email address and a password.</p>
+      </div>
     </div>
   </div>
 

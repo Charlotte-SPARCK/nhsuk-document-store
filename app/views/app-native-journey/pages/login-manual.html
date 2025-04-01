@@ -1,11 +1,12 @@
-{% extends 'layout.html' %}
+{% extends 'layout-mobile.html' %}
 
 {% set pageHeading = "Sign in to the NHS App" %}
 
 {% block content %}
 
+
   <div class="nhsuk-grid-row">
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
 
       <h1 class="nhsuk-heading-l">Access your NHS services</h1>
 
@@ -19,8 +20,9 @@
         <li>View your NHS number</li>
       </ul>
     </div>
-
-    <div class="nhsuk-grid-column-one-third login_nhs-app-mobile-hide">
+    
+    <!-- 
+    <div class="nhsuk-grid-column-full">
       <div class="nhsuk-card nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0">
         <div class="nhsuk-card__content" id="desktop-app-panel">
           <p><strong>Get the NHS App on your smartphone or tablet</strong></p>
@@ -39,9 +41,9 @@
           </ul>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div class="nhsuk-grid-column-two-thirds">
+    <div class="nhsuk-grid-column-full">
       <p class="nhsuk-body">Log in to your account to:</p>
 
       <h2 class="nhsuk-heading-m">Who can have an NHS account</h2>
@@ -61,8 +63,8 @@
         href: "login-email"
       }) }}
 
-      <div class="login_nhs-app-mobile-show">
-        <div class="nhsuk-card nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-0">
+      <div class="">
+        <div class="nhsuk-card nhsuk-u-margin-top-0 nhsuk-u-margin-bottom-4">
           <div class="nhsuk-card__content" id="desktop-app-panel">
             <p><strong>Get the NHS App on your smartphone or tablet</strong></p>
             <p>You can also log in to your NHS account using the NHS App.</p>
@@ -91,7 +93,6 @@
     </div>
 
   </div>
-</div>
 
 {% endblock %}
 
