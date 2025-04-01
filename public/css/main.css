@@ -9901,7 +9901,7 @@ html:has(.app-iframe__page) {
     width: 100%;
   }
   .iframe .nhsuk-header__container {
-    margin: 20px 20px;
+    margin: 0 20px;
   }
   .iframe .nhsuk-mobile-menu-container--visible {
     display: block;
@@ -9939,12 +9939,19 @@ html:has(.app-iframe__page) {
   .iframe footer {
     width: 100%;
   }
+  .iframe footer .nhsuk-footer-container {
+    position: absolute;
+    width: 100%;
+  }
   .iframe footer .nhsuk-footer {
     flex-direction: column;
   }
   .iframe footer .nhsuk-footer .nhsuk-footer__list {
     display: flex;
     flex-direction: column;
+  }
+  .iframe .password {
+    height: 59vh;
   }
 }
 
@@ -11382,6 +11389,10 @@ body {
 }
 
 #password-error {
+  display: none;
+}
+
+#password-error2 {
   display: none;
 }
 

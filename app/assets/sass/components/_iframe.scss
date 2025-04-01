@@ -103,7 +103,7 @@ nav .HeaderMenu_menu-nojs-caption_GZHaZ[data-v-13bcd11a] {
       }
 
       .nhsuk-header__container {
-        margin: 20px 20px;
+        margin: 0 20px;
       }
 
       .nhsuk-mobile-menu-container--visible {
@@ -150,6 +150,12 @@ nav .HeaderMenu_menu-nojs-caption_GZHaZ[data-v-13bcd11a] {
       footer {
         width: 100%;
         
+        .nhsuk-footer-container {
+          
+          position: absolute;
+          width: 100%;
+        }
+        
         .nhsuk-footer {
           flex-direction: column;
     
@@ -158,6 +164,10 @@ nav .HeaderMenu_menu-nojs-caption_GZHaZ[data-v-13bcd11a] {
             flex-direction: column;
           }
         }
+      }
+      
+      .password {
+        height: 59vh;
       }
 
 

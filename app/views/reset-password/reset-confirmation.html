@@ -1,0 +1,39 @@
+{% extends 'layout-mobile.html' %}
+
+{% set pageHeading = "Reset password" %}
+
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full password">
+
+      <!-- Error Summary: Initially hidden -->
+      {{ errorSummary({
+        titleText: "There is a problem",
+        classes: "error",
+        errorList: [
+          {
+            text: "You need to enter your passwords",
+            href: "#password"
+          }
+        ]
+      }) }}
+      
+        <h1 class="nhsuk-heading-l">You have reset your password for NHS login</h1>
+
+        <p class="nhsuk-body">Go to the website or app you were trying to access and enter your login details.</p>
+     
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% block pageScripts %}
+
+{% endblock %}
+
+  
+
+
