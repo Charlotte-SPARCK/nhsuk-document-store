@@ -17,27 +17,42 @@
       <p class="nhsuk-lead-text">
         Prototypes to test new journey's for the NHS Digital Letters project.
       </p>
+
+      <h2 class="nhsuk-heading-s">NHS Native App Journey</h2>
         <ul clas="nhsuk-list">
           <form id="osForm" method="POST">
             <li>
-              <a href="app-native-journey/index" id="appNative">NHS App Native Journey</a> 
+              <a href="native-biometrics-journey/index" id="appNative">Biometrics journey</a> 
               <p>A journey for users who have the NHS App installed</p>
             </li>
             <li>
-              <a href="app-online-journey/index" id="appOnline">NHS App Web Journey</a>
-              <p>A journey for users who DO NOT have the NHS App</p>
+              <a href="native-login-journey/index" id="appNative">Manual login journey</a> 
+              <p>A journey for users who have the NHS App installed with notifications turned off</p>
             </li>
           </form>
-            <li>
-              <a href="sms/sms-list">SMS Versions</a>
-              <p>Versions of SMS copy for users to access their digital letter</p>
-            </li>
-
-            <li>
-              <a href="reset-password/index">Reset password</a>
-              <p>When a user has forgotten their NHS log in password and needs to reset it</p>
-            </li>
         </ul>
+
+        <h2 class="nhsuk-heading-s">NHS Web App Journey</h2>
+        <ul clas="nhsuk-list">
+          <form id="osForm" method="POST">
+              <a href="app-online-journey/index" id="appOnline">NHS App Web Journey</a>
+              <p>A journey for users who DO NOT have the NHS App installed</p>
+            </li>
+          </form>
+        </ul>
+
+        <h2 class="nhsuk-heading-s">Additional Journeys</h2>
+          <ul clas="nhsuk-list">
+              <li>
+                <a href="sms/sms-list">SMS Versions</a>
+                <p>Versions of SMS copy for users to access their digital letter</p>
+              </li>
+  
+              <li>
+                <a href="reset-password/index">Reset password</a>
+                <p>When a user has forgotten their NHS log in password and needs to reset it</p>
+              </li>
+          </ul>
 
       <!-- <h2>Prototype settings</h2>
       <p>You can <a href="/settings">use settings to change the prototype journey.</a></p>  -->
@@ -77,14 +92,14 @@
 
       // Modify the URLs based on the OS detected
       if (os === "iOS") {
-        appNative.href = "/app-native-journey/index";
+        appNative.href = "/native-biometrics-journey/index";
         appOnline.href = "/app-online-journey/index";
       } else if (os === "Android") {
-        appNative.href = "/app-native-journey/android-lockscreen";
+        appNative.href = "/native-biometrics-journey/android-lockscreen";
         appOnline.href = "/app-online-journey/android-lockscreen";
       } else {
         // For unknown OS, you can set default URLs
-        appNative.href = "/app-native-journey/index";
+        appNative.href = "/native-biometrics-journey/index";
         appOnline.href = "/app-online-journey/index";
       }
     }
