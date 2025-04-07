@@ -112,6 +112,11 @@ nav .HeaderMenu_menu-nojs-caption_GZHaZ[data-v-13bcd11a] {
 
       .nhsuk-width-container {
         margin: 0 32px;
+        height: auto;
+      }
+
+      .message-container {
+        height: 100%;
       }
 
       .HeaderLinks_header-links_Sx73j[data-v-3e6c377a] {
@@ -140,12 +145,13 @@ nav .HeaderMenu_menu-nojs-caption_GZHaZ[data-v-13bcd11a] {
     .app-login-wrapper {
       width: 100%;
       height: 110vh;
+      min-height: 740px;
   }
 
-    .message-padding {
-      height: 60vh;
-      position: relative;
-    }
+    // .message-padding {
+    //   // height: 60vh;
+    //   // position: relative;
+    // }
     
       footer {
         width: 100%;
