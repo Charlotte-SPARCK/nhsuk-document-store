@@ -3026,7 +3026,7 @@ b {
   }
 }
 .nhsuk-button:link, .nhsuk-button:visited, .nhsuk-button:active, .nhsuk-button:hover {
-  color: auto;
+  color: #ffffff;
   text-decoration: none;
 }
 .nhsuk-button::-moz-focus-inner {
@@ -11050,6 +11050,9 @@ body {
   align-items: center;
   width: 100%;
   bottom: 50px;
+}
+.login-manual .nhsuk-button:visited {
+  color: #212b32;
 }
 
 .app-login-wrapper .nhsuk-main-wrapper {

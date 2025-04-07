@@ -63,7 +63,12 @@
     align-items: center;
     width: 100%;
     bottom: 50px;
+
+    .nhsuk-button:visited {
+        color: #212b32;
+    }
 }
+
 
 .app-login-wrapper .nhsuk-main-wrapper {
     height: 90vh;
