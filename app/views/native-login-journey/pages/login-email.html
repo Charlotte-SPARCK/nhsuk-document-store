@@ -1,0 +1,90 @@
+{% extends 'layout-mobile.html' %}
+
+{% set pageHeading = "Sign in to the NHS App" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+      
+      <!-- Error Summary: Initially hidden -->
+      {{ errorSummary({
+        titleText: "There is a problem",
+        classes: "error",
+        errorList: [
+          {
+            text: "You need to enter your email address",
+            href: "#email"
+          }
+        ]
+      }) }}
+
+      <form id="emailSubmit" method="POST" action="">
+
+        <h1 class="nhsuk-heading-l">Enter your email address</h1>
+
+        <p class="nhsuk-body">If you have used the NHS App or other NHS websites, you should enter the email address you used to register for them.</p>
+        
+        <p class="nhsuk-body">We will check if you have an NHS login. If not, you can set one up.</p>
+
+        <div class="nhsuk-form-group" id="errorBorder"> 
+          <label class="nhsuk-label" for="email">
+            Email address
+          </label>
+          <span class="nhsuk-error-message" id="email-error">
+            <span class="nhsuk-u-visually-hidden">Error:</span> You need to enter your email address
+          </span>
+          <input class="nhsuk-input" id="email" name="email" type="text" aria-describedby="email-error">
+        </div>
+
+        {{ button({
+          id: "continueButton",
+          text: "Continue",
+          classes: "nhsapp-button"
+        }) }}
+
+      </form>
+
+      <div class="nhsuk-inset-text">
+        <h2>What is NHS login?</h2>
+        <p>NHS login allows you to securely access health websites and apps with just your email address and a password.</p>
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const form = document.getElementById("emailSubmit");
+      const emailInput = document.getElementById("email"); 
+      const errorSummary = document.querySelector(".error");
+      const emailError = document.getElementById("email-error");
+      const errorBorder = emailInput.closest(".nhsuk-form-group");  // Get the parent form group of the email input.
+
+      // Handle form submission
+      form.addEventListener("submit", function(event) {
+          // Check if email input is empty
+          if (emailInput.value.trim() === "") {
+              // Show the error summary and error message if email input is empty
+              errorSummary.style.display = "block";
+              emailError.style.display = "block";
+              // Add error classes to highlight input and its parent form group
+              errorBorder.classList.add("nhsuk-form-group--error");
+              emailInput.classList.add("nhsuk-input--error");
+
+              // Prevent form submission
+              event.preventDefault();
+          } else {
+              // Hide the error summary and error message if email input is not empty
+
+              form.action = "login-password";
+          }
+      });
+  });
+
+
+</script>
+
+{% endblock %}

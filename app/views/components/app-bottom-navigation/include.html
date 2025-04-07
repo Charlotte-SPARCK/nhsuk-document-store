@@ -33,18 +33,18 @@
           </a>
         </li>
         <li class="app-bottom-navigation__item">
-          <a class="app-bottom-navigation__link" href="/pages/messages-{{ data['accountType'] }}">
+          <a class="app-bottom-navigation__link" href="/pages/messages/your-messages">
             {% if hub === "Messages" %}
               {% if data['messages'] > 0 %}
                 {{ nhsappIcon('messagesUnreadFilled') }}
               {% else %}
-                {{ nhsappIcon('messagesFilled') }}
+                {{ nhsappIcon('messagesUnreadFilled') }}
               {% endif %}
             {% else %}
               {% if data['messages'] > 0 %}
                 {{ nhsappIcon('messagesUnread') }}
               {% else %}
-                {{ nhsappIcon('messages') }}
+                {{ nhsappIcon('messagesUnread') }}
               {% endif %}
             {% endif %}
             <span class="app-bottom-navigation__label {% if hub === 'Messages' %}app-bottom-navigation__label--active{% endif %}">Messages</span>
