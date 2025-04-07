@@ -18,14 +18,47 @@
   {% endblock %}
 
 {% block pageScripts %}
-    <script>
-      $(document).ready(function () {
-          // Handler for .ready() called.
-          window.setTimeout(function () {
-              location.href = "login-face-id";
-          }, 700);
-      });
-    </script>
+<script>
+  // Function to detect the operating system
+  function detectOperatingSystem() {
+    const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    // Check for iOS
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      return "iOS";
+    }
+    // Check for Android
+    else if (/android/i.test(userAgent)) {
+      return "Android";
+    }
+    // If neither, return Unknown
+    else {
+      return "Unknown OS";
+    }
+  }
+
+  // Function to update the link URLs based on OS
+  function updateLinks() {
+    const os = detectOperatingSystem();
+
+    // Delay the redirection for 1 second
+    setTimeout(() => {
+      if (os === "iOS") {
+        location.href = "login-face-id";
+      } else if (os === "Android") {
+        location.href = "login-thumb-id";
+      } else {
+        location.href = "login-face-id"; // Default case for unknown OS
+      }
+    }, 1000); // Delay the redirection by 1 second
+  }
+
+  // Call the updateLinks function when ready
+  updateLinks();
+
+
+  
+</script>
 {% endblock %}
 
   
