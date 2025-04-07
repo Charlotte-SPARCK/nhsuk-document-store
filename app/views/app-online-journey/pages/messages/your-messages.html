@@ -79,8 +79,8 @@
 
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
-        {% if "Unread" in data['message-status'] and data['message1read'] == "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] == "true" %}
-        {% if "Cervical Screening" in data['message-sender'] or data['message-sender'] == "" %}
+        {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
+        {% if "NHS Vaccines" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
         <li class="nhsapp-card">
           <div class="nhsapp-card__container nhsuk-u-margin-left-6">
@@ -113,7 +113,7 @@
         {% endif %}
         {% endif %}
 
-        {% if "Unread" in data['message-status'] and data['message2read'] == "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] == "true" %}
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
         {% if "Range Surgery" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 2 -->
         <li class="nhsapp-card">
@@ -121,7 +121,7 @@
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
-                  Thursday
+                  <p id="yesterdays-date"></p>
                 </span>
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
@@ -166,7 +166,7 @@
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
-                  4 Oct 2023
+                  4 Oct 2024
                 </span>
               </div>
               <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="message-3">
@@ -194,7 +194,7 @@
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block nhsuk-u-secondary-text-color">
-                  18 Sep 2023
+                  18 Sep 2024
                 </span>
               </div>
               <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="message-4">

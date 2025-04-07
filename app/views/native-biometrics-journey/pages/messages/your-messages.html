@@ -80,7 +80,7 @@
 
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
-        {% if "Unread" in data['message-status'] and data['message1read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] === "false" %}
+        {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
         {% if "NHS Vaccines" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
         <li class="nhsapp-card">

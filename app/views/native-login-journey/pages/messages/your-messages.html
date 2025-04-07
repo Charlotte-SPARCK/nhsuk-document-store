@@ -79,8 +79,8 @@
 
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
-        {% if "Unread" in data['message-status'] and data['message1read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message1read'] === "true" %}
-        {% if "Cervical Screening" in data['message-sender'] or data['message-sender'] == "" %}
+        {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
+        {% if "NHS Vaccines" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
         <li class="nhsapp-card">
           <div class="nhsapp-card__container nhsuk-u-margin-left-6">
@@ -113,7 +113,7 @@
         {% endif %}
         {% endif %}
 
-        {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
+        {% if "Read" in data['message-status'] or data['message-status'] == "" %}
         {% if "Range Surgery" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 2 -->
         <li class="nhsapp-card">
