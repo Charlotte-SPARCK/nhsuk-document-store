@@ -45,11 +45,13 @@
         </defs>
       </svg>
 
-      <div class="nhsapp-button-group">
-        <button class="nhsuk-button nhsapp-button" data-module="nhsuk-button" type="submit">
-          Turn on notifications
-        </button>
-        <a href="#" class="nhsuk-link">Not now</a>
+      <div class="nhsapp-button-group notify-button">
+        <form method="post" action="messages/your-messages">
+          <button class="nhsuk-button nhsapp-button" data-module="nhsuk-button" type="submit" action="messages/your-messages">
+            Turn on notifications
+          </button>
+        </form>
+        <a href="messages/your-messages" class="nhsuk-link">Not now</a>
       </div>
 
     </div>
