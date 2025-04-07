@@ -11061,6 +11061,11 @@ body {
   position: relative;
 }
 
+.nhsapp-badge-small--absolute .nhsapp-badge-small__indicator {
+  left: -24px;
+  background-color: #d5281b;
+}
+
 /* SMS Layout */
 /* App Container */
 .app-container {
