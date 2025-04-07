@@ -87,33 +87,24 @@
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
                 <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
-                  1:02pm
+                  <p id="current-time"></p>
                 </span>
               </div>
               <!-- FORM AND HIDDEN INPUT ONLY USED FOR PROTOTYPING PURPOSES TO PASS DATA -->
               <form id="message1" method="post" action="message">
-                {% if data['message1read'] == "false" %}
-                <input type="hidden" name="message1read" value="true">
-                <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
-                {% endif %}
                 <a href="#1" onclick="document.getElementById('message1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
-                  {% if data['message1read'] == "true" %}
-                  <span class="nhsuk-u-visually-hidden">Read message from </span>
+                  <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
+                    <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
+                    <span class="nhsuk-u-visually-hidden">Unread message from </span>
+                  </span>
                   NHS Vaccines
-                  {% else %}
-                    <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
-                      <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
-                      <span class="nhsuk-u-visually-hidden">Unread message from </span>
-                    </span>NHS Vaccines
-                  {% endif %}
-                  <span class="nhsuk-u-visually-hidden"> received today at 1:02pm</span> 
+                  <span class="nhsuk-u-visually-hidden"> received today</span> 
                 </a>
               </form>
               <div class="nhsapp-card__below">
                 <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
                   <span class="nhsuk-u-visually-hidden"> with preview message of </span>
-                  Dear Jane Sample,
-                  We are writing to invite you to book an appointment to receive your seasonal vaccination. As part of the NHS vaccination programme, you are now eligible to receive the vaccine and we encourage you to take up this opportunity to help protect yourself and others.
+                  We're inviting you to get your free winter NHS COVID-19 vaccination. This is because your NHS record suggests you may be at increased risk of serious illness from COVID-19.
                 </p>
               </div>
             </div>
@@ -230,3 +221,57 @@
   </div>
 
   {% endblock %}
+
+  {% block pageScripts %}
+    <script>
+       // Function to update and get the current time in 12-hour format (HH:MM AM/PM)
+       function updateTime() {
+            let currentDateTime = new Date();
+            let hours = currentDateTime.getHours();
+            let minutes = currentDateTime.getMinutes();
+
+            // Determine AM or PM
+            let period = hours >= 12 ? 'pm' : 'am';
+
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12' (midnight)
+
+            // Ensure two digits for minutes
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Format the time as HH:MM AM/PM
+            let currentTime = hours + ':' + minutes + ' ' + period;
+
+            // Display the current time in the <p> tag with id "current-time"
+            document.getElementById("current-time").textContent = currentTime;
+        }
+
+        function getYesterdaysDate() {
+            let today = new Date();
+            
+            // Subtract one day from the current date
+            today.setDate(today.getDate() - 1);
+
+            // Get the day, month, year and weekday
+            let day = today.getDate();
+            let month = today.toLocaleString('default', { month: 'long' }); // Full month name
+            let year = today.getFullYear();
+            let weekday = today.toLocaleString('default', { weekday: 'long' }); // Full weekday name
+
+            // Ensure two digits for the day
+            day = day < 10 ? '0' + day : day;
+
+            // Format the date as "Day, Month DD, YYYY"
+            let formattedDate = weekday;
+            return formattedDate;
+        }
+
+        // Display yesterday's date in the <p> tag with id "yesterdays-date"
+        document.getElementById("yesterdays-date").textContent = getYesterdaysDate();
+
+
+        // Initial call to display time when the page loads
+        updateTime();
+  </script>
+{% endblock %}

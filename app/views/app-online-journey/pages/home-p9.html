@@ -69,35 +69,22 @@
         headingText: "Messages"
       }) }}
 
-      {% if data['messages'] > 0 %}
-        {{ nhsappCardGroup({
-          stacked: true,
-          cards: [
-            {
-              title: 'View your messages',
-              href: 'messages-p9',
-              prefixIcon: 'messagesUnread',
-              linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
-              badgeLarge: {
-                count: data['messages'],
-                label: 'unread messages',
-                ariaHidden: true
-              }
-            }
-          ]
-        }) }}
-      {% else %}
         {{ nhsappCardGroup({
           stacked: true,
           cards: [
             {
               title: 'View your messages',
               href: 'messages/your-messages',
-              prefixIcon: 'messages'
+              prefixIcon: 'messagesUnread',
+              linkAriaLabel: 'Messages, you have ' + data['messages'] + ' unread messages',
+              badgeLarge: {
+                count: 1,
+                label: 'unread messages',
+                ariaHidden: true
+              }
             }
           ]
         }) }}
-      {% endif %}
 
       <!-- SECTION - SWITCH PROFILES -->
       {{ nhsappSectionHeading({
