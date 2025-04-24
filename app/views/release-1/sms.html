@@ -1,0 +1,38 @@
+{% extends 'layout-ios-sms.html' %}
+
+{% block content %}
+<div class="app-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="header-left">
+        <img src="/images/contact-photo.png" alt="User Avatar" class="avatar">
+        <span class="user-name">NHSApp</span>
+      </div>
+      <!-- <div class="header-right">
+        <button class="info-button">i</button>
+      </div> -->
+    </header>
+
+    <!-- Messages Container -->
+    <div class="messages-container" style="word-wrap: break-word; display: block;">
+      <!-- Incoming Message -->
+      <div class="message incoming">
+        <div class="message-content">
+          <p>Hi [your_name],</p>
+ 
+          <p>You have a new message from the NHS. Please open the NHS App to read it.</p>
+          
+          <p>Or you can view it online at: <a href="pages/login" class="">https://www.nhsapp.service.nhs.uk/inbox</a></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Message Input -->
+    <div class="input-container">
+      <input type="text" placeholder="Type a message..." class="message-input">
+      <button class="send-button">Send</button>
+    </div>
+  </div>
+  
+
+{% endblock %}

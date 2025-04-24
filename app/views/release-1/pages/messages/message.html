@@ -1,0 +1,86 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "your-messages" %}
+
+{% set pageHeading = "NHS VACCINES" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+         
+      <p class="nhsuk-hint" id="current-time"></p>
+      <p>We're inviting you to get your free winter NHS COVID-19 vaccination. This is because your NHS record suggests you may be at increased risk of serious illness from COVID-19.</p>
+
+      <p>You can <a href="/">check the list of health conditions and treatments</a> that can increase your risk.</p>
+      
+      <p class="nhsuk-heading-xs">How to get your COVID-19 vaccination</p>
+      
+      <ul>
+        <li><a href="/">Book online</a> - answer 'yes, I am eligible'</li>
+        <li>Book on the <a href="/">NHS App</a></li>
+        <li>Find your nearest <a href="/">COVID-19 vaccination walk-in site</a></li>
+      </ul>
+      
+      <p>Book your COVID-19 vaccine before <b>20 June 2025</b>.</p>
+      
+      <p><b>If you need support</b></p>
+      
+      <p>If you can't get online, phone <b>119</b>. Translators are available. You can also use text phone <b>18001 119</b> or the <a href="/">NHS British Sign Language service</a>.</p>
+      
+      <p>If you get your care at home, contact your GP surgery for a <b>home visit</b>. If they can't arrange it, find your <a href="/">local COVID-19 contacts</a>.</p>
+      
+      <p>Information is available in <a href="/">easy read and other languages and formats</a>.</p>  
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block pageScripts %}
+    <script>
+      // Function to get the current date and time in "Sent DD Month YYYY at HH:MM" format
+      function getCurrentDateTime() {
+            let currentDateTime = new Date();
+            let day = currentDateTime.getDate();
+            let month = currentDateTime.toLocaleString('default', { month: 'long' }); // Gets the full month name
+            let year = currentDateTime.getFullYear();
+            let hours = currentDateTime.getHours();
+            let minutes = currentDateTime.getMinutes();
+
+            // Determine AM or PM
+            let period = hours >= 12 ? 'pm' : 'am';
+
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12' (midnight)
+
+            // Ensure two digits for day, hours, and minutes
+            day = day < 10 ? '0' + day : day;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Format the date and time as "Sent DD Month YYYY at HH:MM AM/PM"
+            let formattedDateTime = 'Sent ' + day + ' ' + month + ' ' + year + ' at ' + hours + ':' + minutes + ' ' + period;
+            return formattedDateTime;
+        }
+
+      // Display the current date and time in the <p> tag with id "current-time"
+      document.getElementById("current-time").textContent = getCurrentDateTime();
+  </script>
+{% endblock %}
+
