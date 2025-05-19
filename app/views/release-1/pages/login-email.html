@@ -40,7 +40,8 @@
         {{ button({
           id: "continueButton",
           text: "Continue",
-          classes: "nhsapp-button"
+          classes: "nhsapp-button",
+          href: "login-password"
         }) }}
 
       </form>
@@ -55,36 +56,5 @@
 {% endblock %}
 
 {% block pageScripts %}
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const form = document.getElementById("emailSubmit");
-      const emailInput = document.getElementById("email"); 
-      const errorSummary = document.querySelector(".error");
-      const emailError = document.getElementById("email-error");
-      const errorBorder = emailInput.closest(".nhsuk-form-group");  // Get the parent form group of the email input.
-
-      // Handle form submission
-      form.addEventListener("submit", function(event) {
-          // Check if email input is empty
-          if (emailInput.value.trim() === "") {
-              // Show the error summary and error message if email input is empty
-              errorSummary.style.display = "block";
-              emailError.style.display = "block";
-              // Add error classes to highlight input and its parent form group
-              errorBorder.classList.add("nhsuk-form-group--error");
-              emailInput.classList.add("nhsuk-input--error");
-
-              // Prevent form submission
-              event.preventDefault();
-          } else {
-              // Hide the error summary and error message if email input is not empty
-
-              form.action = "login-password";
-          }
-      });
-  });
-
-
-</script>
 
 {% endblock %}

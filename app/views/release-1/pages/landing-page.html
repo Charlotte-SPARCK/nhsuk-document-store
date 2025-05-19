@@ -1,0 +1,63 @@
+{% extends 'layout-mobile.html' %}
+
+{% set pageHeading = "Sign in to the NHS App" %}
+
+{% block content %}
+
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      <h1 class="nhsuk-heading-l">Access your NHS account</h1>
+
+      <p class="nhsuk-body">Log in to:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>view your messages</li>
+        <li>book your COVID-19 vaccine</li>
+        <li>view your health record and test results</li>
+        <li>order repeat prescriptions</li>
+        <li>book and manage appointments and referrals</li>
+        <li>access other NHS services</li>
+      </ul>
+      
+      {{ insetText({
+        html: "<p>We may need to send you a security code on your mobile phone, so you can log in.</p>",
+        classes: "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-4"
+      }) }}
+
+      {{ button({
+        text: "Continue",
+        classes: "nhsuk-button--blue",
+        href: "login-email"
+      }) }}
+
+      <h2 class="nhsuk-heading-m">Who can have an NHS account</h2>
+
+      <p class="nhsuk-body">You can have an account if you are:</p>
+
+      <ul class="nhsuk-list nhsuk-list--bullet">
+        <li>Registered with a GP surgery in England</li>
+        <li>Aged 13 or over</li>
+      </ul>
+
+      <p class="nhsuk-body"><a href="/">Find out more about who can have an NHS account</a></p>
+
+      <p class="nhsuk-heading-m"><strong>Get the NHS App</strong></p>
+        <p>You can also log in to your NHS account using the NHS App on your smartphone or tablet.</p>
+
+        <div class="nhsuk-u-margin-bottom-8">
+          <img alt="Download on the App Store" src="/images/ios-app-store.png">
+          <img alt="Get it on Google Play" src="/images/google-play-store.png">
+        </div>
+
+        <p class="nhsuk-heading-m"><strong>Health advice and information</strong></p>
+        <p class="nhsuk-body">Find out more about health conditions, symptoms, treatments and how to get help, without logging in, on the NHS website.</p>
+    </div>
+  </div>
+
+{% endblock %}
+
+{% block pageScripts %}
+    
+{% endblock %}
