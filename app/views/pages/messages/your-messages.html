@@ -2,7 +2,7 @@
 
 {% set hub = "Messages" %}
 
-{% set backLink = true %}
+{% set backLink = false %}
 {% set backLinkURL = "../home-" + data['accountType'] %}
 
 {% set pageHeading = "Your messages" %}
@@ -50,6 +50,7 @@
             {% endif %}
           </span>
         </a>
+
         {% if data['message-sender'] == "" and data['message-status'] == "" %}
           {% else %}
           <form id="form-clear" method="post" action="your-messages" novalidate="novalidate">
@@ -80,13 +81,13 @@
       <ul class="nhsapp-cards nhsapp-cards--stacked">
 
         {% if "Unread" in data['message-status'] and data['message2read'] === "false" or data['message-status'] == "" or "Read" in data['message-status'] and data['message2read'] === "true" %}
-        {% if "NHS Vaccines" in data['message-sender'] or data['message-sender'] == "" %}
+        {% if "NHS Cervical Screening" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 1 -->
         <li class="nhsapp-card">
           <div class="nhsapp-card__container nhsuk-u-margin-left-6">
             <div class="nhsapp-card__content">
               <div class="nhsapp-card__above">
-                <span aria-hidden="true" class="nhsuk-u-display-block {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
+                <span aria-hidden="false" class="nhsuk-u-display-block {% if data['message1read'] === 'false' %}nhsuk-u-secondary-text-color {% else %}nhsuk-u-font-weight-bold{% endif %}">
                   <p id="current-time"></p>
                 </span>
               </div>
@@ -94,16 +95,16 @@
               <form id="message1" method="post" action="message">
                 <a href="#1" onclick="document.getElementById('message1').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
                   <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
-                    <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
-                    <span class="nhsuk-u-visually-hidden">Unread message from</span>
-                  </span>NHS Cervical Screening
+                    <span class="nhsapp-badge-small__indicator" aria-hidden="false"></span>
+                    <span class="nhsuk-u-visually-hidden">Unread message from </span>
+                  </span>NHS CERVICAL SCREENING
                   <span class="nhsuk-u-visually-hidden"> received today</span> 
                 </a>
               </form>
               <div class="nhsapp-card__below">
-                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'true' %}nhsuk-u-secondary-text-color{% endif %}">
+                <p class="nhsuk-u-margin-top-2 nhsapp-u-truncate-two-lines {% if data['message1read'] === 'false' %}nhsuk-u-secondary-text-color{% endif %}">
                   <span class="nhsuk-u-visually-hidden"> with preview message of </span>
-                  We're inviting you to get your free winter NHS COVID-19 vaccination. This is because your NHS record suggests you may be at increased risk of serious illness from COVID-19.
+                  We are writing to invite you for your NHS cervical screening (previously called the 'smear test').
                 </p>
               </div>
             </div>
@@ -130,17 +131,17 @@
                 <input type="hidden" name="messages" value="{{ data['messages'] - 1 }}">
                 {% endif %}
                 {% if data['replySent'] === "true" %}
-                <input type="hidden" name="replySentFocus" value="false">
+                <input type="hidden" name="replySentFocus" value="true">
                 {% endif %}
                 <a href="#2" onclick="document.getElementById('message2').submit();" class="nhsapp-card__link nhsuk-link--no-visited-state">
                   {% if data['message2read'] === "false" %}
                   <span class="nhsuk-u-visually-hidden">Read message from </span>
-                    Range surgery
+                    RANGE SURGERY
                   {% else %}
                     <span class="nhsapp-badge-small nhsapp-badge-small--absolute">
                       <span class="nhsapp-badge-small__indicator" aria-hidden="true"></span>
                       <span class="nhsuk-u-visually-hidden">Unread message from </span>
-                    </span>Portland Street Great Westood Surgery
+                    </span>RANGE SURGERY
                   {% endif %}
                   <span class="nhsuk-u-visually-hidden"> received on Thursday at 2:45pm </span> 
                 </a>
@@ -158,7 +159,7 @@
         {% endif %}
 
         {% if "Read" in data['message-status'] or data['message-status'] == "" %}
-        {% if "Hughenden Valley Surgery" in data['message-sender'] or data['message-sender'] == "" %}
+        {% if "HUGHENDEN VALLEY SURGERY" in data['message-sender'] or data['message-sender'] == "" %}
         <!-- MESSAGE 3 -->
         <li class="nhsapp-card">
           <div class="nhsapp-card__container nhsuk-u-margin-left-6">
@@ -170,7 +171,7 @@
               </div>
               <a class="nhsapp-card__link nhsuk-link--no-visited-state" href="message-3">
                 <span class="nhsuk-u-visually-hidden">Read message from </span>
-                Hughenden Valley Surgery
+                HUGHENDEN VALLEY SURGERY
                 <span class="nhsuk-u-visually-hidden"> received 4 October 2023 at 6:30pm</span> 
               </a>
               <div class="nhsapp-card__below">

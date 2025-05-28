@@ -5,14 +5,14 @@
 {% set backLink = true %}
 {% set backLinkURL = "your-messages" %}
 
-{% set pageHeading = "NHS VACCINES" %}
+{% set pageHeading = "NHS CERVICAL SCREENING" %}
 
 {% block content %}
 
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-full">
 
-      <!-- DYNAMIC PAGE TITLE -->
+      
       {{ dynamicPageTitle({
         title: pageHeading,
         titleSmall: true,
@@ -21,30 +21,69 @@
         descriptionMuted: true
       })}}
 
-      <div class="nhsuk-u-margin-bottom-7 message-padding">
+      <div class="nhsuk-u-margin-bottom-7">
          
-      <p class="nhsuk-hint" id="current-time"></p>
-      <p>We're inviting you to get your free winter NHS COVID-19 vaccination. This is because your NHS record suggests you may be at increased risk of serious illness from COVID-19.</p>
+        <p class="nhsuk-hint" id="current-time"></p>
 
-      <p>You can <a href="/">check the list of health conditions and treatments</a> that can increase your risk.</p>
+        <p>Dear Christopher Smith</p>
+
+        <p>We are writing to invite you for your NHS cervical screening (previously called the 'smear test').</p>
+
+        <p>We offer screening to all women and people with a cervix, aged 25 to 64, to help prevent cervical cancer and to save lives.</p>
+
+        <p><b>How to book your appointment</b></p>
+
+        <p>Contact your GP surgery to book a cervical screening appointment.</p>
+
+        <p>Some sexual health clinics also offer cervical screening. <a href="/">Contact your local sexual health clinic</a> to find out more.</p>
+
+        <p><b>Why should I book an appointment?</b></p>
+
+        <p>Cervical screening checks for certain types of human papillomavirus (HPV). These 'high risk' types of HPV can be found in over 99% of cervical cancers.</p>
+
+        <p>If we find one of these HPV types in your screening sample, we then check for abnormal cell changes.</p>
+
+        <p>By finding and treating these changes early, we can prevent most cases of cervical cancer.</p>
+
+        <p>You can get HPV the first time you have sexual contact, and you do not need to have penetrative sex to get it.</p>
+
+        <p>You can have it even if you have had the same sexual partner for a long time or have not been sexually active for many years.</p>
+
+        <p>You can still have HPV regardless of your sexual orientation or if you have had the HPV vaccine.</p>
+
+        <p><b>Support if you are worried about cervical screening</b></p>
+
+        <p>Cervical screening appointments only take 5 to 10 minutes, but you can ask for a longer appointment if you would like more time.</p>
+
+        <p>You can also ask for a female nurse or doctor and can bring someone else in the room with you for support.</p>
+
+        <p>During your appointment, you can ask to lie in a different position and for a smaller speculum to make the test more comfortable for you.</p>
+
+        <p>For more information about what happens during a cervical screening appointment, HPV, and cervical cancer, <a href="/">read our online leaflet on the GOV.UK website</a>.</p>
+
+        <p>You can also <a href="/">find advice and support on the GOV.UK website if you feel worried or need assistance attending cervical screening</a>.</p>
+
+        <p><b>More information</b></p>
+
+        <p>The nurse or doctor who does your screening test will tell you how and when you can expect to get your result, and they will also be told your result.</p>
+
+        <p>Tell your GP surgery if you change your address or contact details.</p>
+
+        <p>Speak to a GP as soon as possible if you have any of the following symptoms, regardless of your cervical screening history:</p>
+
+        <ul>
+          <li>vaginal bleeding that's unusual for you - including bleeding during or after sex, between your periods or after the menopause, or heavier periods than usual</li>
+          <li>changes to your vaginal discharge</li>
+          <li>pain during sex</li>
+          <li>pain in your lower back, between your hip bones (pelvis), or in your lower tummy</li>
+        </ul>
+
+        <p>Learn more about <a href="/">NHS cervical screening and HPV</a>, including what happens at your appointment and how to book.</p>
+
+        <p>If you have any concerns or questions about cervical screening, speak with a GP</p>
+
+        <p><a href="/">Read about how we use and protect your information</a>, or <a href="/">opt out</a>.</p>
       
-      <p class="nhsuk-heading-xs">How to get your COVID-19 vaccination</p>
-      
-      <ul>
-        <li><a href="/">Book online</a> - answer 'yes, I am eligible'</li>
-        <li>Book on the <a href="/">NHS App</a></li>
-        <li>Find your nearest <a href="/">COVID-19 vaccination walk-in site</a></li>
-      </ul>
-      
-      <p>Book your COVID-19 vaccine before <b>20 June 2025</b>.</p>
-      
-      <p><b>If you need support</b></p>
-      
-      <p>If you can't get online, phone <b>119</b>. Translators are available. You can also use text phone <b>18001 119</b> or the <a href="/">NHS British Sign Language service</a>.</p>
-      
-      <p>If you get your care at home, contact your GP surgery for a <b>home visit</b>. If they can't arrange it, find your <a href="/">local COVID-19 contacts</a>.</p>
-      
-      <p>Information is available in <a href="/">easy read and other languages and formats</a>.</p>  
       </div>
 
     </div>
@@ -83,3 +122,4 @@
       document.getElementById("current-time").textContent = getCurrentDateTime();
   </script>
 {% endblock %}
+
