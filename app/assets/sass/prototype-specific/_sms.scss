@@ -109,11 +109,6 @@
     align-items: center;
     border-bottom: 1px solid #ccc;
   }
-
-  a {
-    text-decoration: none;
-    color: #000;
-  }
   
   .header-left {
     display: flex;
@@ -157,6 +152,12 @@
     padding: 20px;
     overflow-y: auto;
     background-color: #ffffff;
+
+
+    a {
+      text-decoration: none;
+      color: #000;
+    }
   }
   
   .message-title p{
