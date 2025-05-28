@@ -11152,11 +11152,6 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-a {
-  text-decoration: none;
-  color: #000;
-}
-
 .header-left {
   display: flex;
   flex-direction: column;
@@ -11199,6 +11194,10 @@ a {
   padding: 20px;
   overflow-y: auto;
   background-color: #ffffff;
+}
+.messages-container a {
+  text-decoration: none;
+  color: #000;
 }
 
 .message-title p {
