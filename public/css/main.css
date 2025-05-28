@@ -11074,14 +11074,87 @@ body {
   height: 100%;
 }
 
+.hidden {
+  display: none;
+}
+
+/* Android Styling */
+#android-header .header-left {
+  display: flex;
+  flex-direction: row;
+  column-gap: 10px;
+  margin: 0;
+  align-items: center;
+}
+#android-header .header-left img {
+  width: 30px;
+  height: 30px;
+}
+#android-header .header-left .user-name {
+  padding: 0;
+}
+#android-header .header-left .sms-arrow {
+  width: 100%;
+  padding-right: 20px;
+}
+
+#android-container .incoming {
+  background-color: #fff;
+}
+#android-container .message-caption {
+  max-width: 80%;
+  border-radius: 0 0 15px 15px;
+  border: 1px solid #b7b7b7;
+}
+#android-container .message-caption .message-content {
+  padding: 10px;
+}
+#android-container .message-caption a {
+  text-decoration: none;
+  color: #000;
+}
+#android-container .message-caption p {
+  font-size: 14px;
+}
+#android-container .message-caption span {
+  font-size: 12px;
+}
+#android-container .message {
+  padding: 0;
+}
+#android-container .message .caption {
+  border-radius: 0;
+}
+#android-container .message .message-content {
+  padding: 10px;
+  background-color: #e5e5ea;
+  border-radius: 15px 15px 0 0;
+}
+#android-container .android-img {
+  width: 100%;
+  text-align: center;
+  background-color: #005eb8;
+  padding: 20px;
+}
+#android-container .android-img img {
+  width: 200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
 /* Header Styling */
 .header {
   background-color: #EFEFEF;
-  padding: 40px 10px 10px 10px;
+  padding: 10px 10px 10px 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid #ccc;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 .header-left {
@@ -11089,6 +11162,7 @@ body {
   flex-direction: column;
   margin: 0 auto;
   align-items: center;
+  font-size: 14px;
 }
 
 .header-left img {
@@ -11103,8 +11177,8 @@ body {
 }
 
 .user-name {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 14px;
+  padding-top: 10px;
 }
 
 .header-right {
@@ -11127,12 +11201,52 @@ body {
   background-color: #ffffff;
 }
 
+.message-title p {
+  font-size: 12px;
+  text-align: center;
+  color: #757575;
+}
+
 .message {
-  max-width: 70%;
-  margin-bottom: 10px;
+  max-width: 80%;
   padding: 10px;
   border-radius: 15px;
-  font-size: 16px;
+}
+
+.message-preview {
+  max-width: 80%;
+  padding: 10px;
+}
+
+.message-img {
+  background-color: #005eb8 !important;
+  border-radius: 15px 15px 0 0;
+}
+.message-img .message-content {
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px;
+}
+.message-img img {
+  width: 150px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.message-caption {
+  font-weight: bold;
+  border-radius: 0 0 15px 15px;
+}
+.message-caption .message-content {
+  font-size: 12px;
+}
+.message-caption span {
+  font-weight: normal;
+  color: #757575;
+}
+
+.message p {
+  font-size: 14px;
 }
 
 .incoming {
