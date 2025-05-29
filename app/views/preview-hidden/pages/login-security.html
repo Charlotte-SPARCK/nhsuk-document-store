@@ -1,0 +1,91 @@
+{% extends 'layout.html' %}
+
+{% set pageHeading = "Sign in to the NHS App" %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back to: Enter your password",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "login-password"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">Enter the security code</h1>
+
+      <p class="nhsuk-body">We sent a text to •••••••1234.</p>
+      
+      {{ details({
+        text: "Not received a text?",
+        HTML: "
+        <p>When we are really busy it may take a bit longer for us to text you.</p>
+        <p><a>Send the security code again</a>.</p>
+        "
+      }) }}
+
+      {{ input({
+        label: {
+          text: "Security code"
+        },
+        hint: {
+          text: "The code is 6 digits"
+        },
+        id: "code",
+        name: "code"
+      }) }}
+
+      {{ checkboxes({
+        idPrefix: "remember",
+        name: "remember",
+        items: [
+          {
+            value: "remember",
+            text: "Remember this device and stop sending security codes",
+            id: "remember"
+          }
+        ]
+      }) }}
+
+      {{ details({
+        text: "What does remember this device mean?",
+        HTML: "
+        <p>We can remember the device you are using now, so you will not need to enter a security code when you log in with this device in the future.</p>
+
+        <p>To keep your NHS login secure, you should only do this on your own personal or trusted devices.</p>
+        
+        <p>We may ask if you still want us to remember this device in the future.</p>
+        "
+      }) }}
+
+
+
+      {{ details({
+        text: "I cannot log in using my mobile phone",
+        HTML: "
+        <p>If you no longer have access to it, you can <a>change the mobile phone number you use to log in.</a></p>
+                "
+      }) }}
+
+
+      {{ button({
+        text: "Continue",
+        classes: "nhsapp-button",
+        href: "/"
+      }) }}
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+{% block pageScripts %}
+    
+{% endblock %}
+
+  
+
+

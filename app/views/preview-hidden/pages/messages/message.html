@@ -1,0 +1,125 @@
+{% extends 'layout-app.html' %}
+
+{% set hub = "Messages" %}
+
+{% set backLink = true %}
+{% set backLinkURL = "your-messages" %}
+
+{% set pageHeading = "NHS CERVICAL SCREENING" %}
+
+{% block content %}
+
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-full">
+
+      
+      {{ dynamicPageTitle({
+        title: pageHeading,
+        titleSmall: true,
+        titleHiddenTextBefore: "Message from",
+        description: pageDescription,
+        descriptionMuted: true
+      })}}
+
+      <div class="nhsuk-u-margin-bottom-7">
+         
+        <p class="nhsuk-hint" id="current-time"></p>
+
+        <p>Dear (Your Name),</p>
+
+        <p>We are writing to invite you for your NHS cervical screening (previously called the 'smear test').</p>
+
+        <p>We offer screening to all women and people with a cervix, aged 25 to 64, to help prevent cervical cancer and to save lives.</p>
+
+        <p><b>How to book your appointment</b></p>
+
+        <p>Contact your GP surgery to book a cervical screening appointment.</p>
+
+        <p>Some sexual health clinics also offer cervical screening. <a href="/">Contact your local sexual health clinic</a> to find out more.</p>
+
+        <p><b>Why should I book an appointment?</b></p>
+
+        <p>Cervical screening checks for certain types of human papillomavirus (HPV). These 'high risk' types of HPV can be found in over 99% of cervical cancers.</p>
+
+        <p>If we find one of these HPV types in your screening sample, we then check for abnormal cell changes.</p>
+
+        <p>By finding and treating these changes early, we can prevent most cases of cervical cancer.</p>
+
+        <p>You can get HPV the first time you have sexual contact, and you do not need to have penetrative sex to get it.</p>
+
+        <p>You can have it even if you have had the same sexual partner for a long time or have not been sexually active for many years.</p>
+
+        <p>You can still have HPV regardless of your sexual orientation or if you have had the HPV vaccine.</p>
+
+        <p><b>Support if you are worried about cervical screening</b></p>
+
+        <p>Cervical screening appointments only take 5 to 10 minutes, but you can ask for a longer appointment if you would like more time.</p>
+
+        <p>You can also ask for a female nurse or doctor and can bring someone else in the room with you for support.</p>
+
+        <p>During your appointment, you can ask to lie in a different position and for a smaller speculum to make the test more comfortable for you.</p>
+
+        <p>For more information about what happens during a cervical screening appointment, HPV, and cervical cancer, <a href="/">read our online leaflet on the GOV.UK website</a>.</p>
+
+        <p>You can also <a href="/">find advice and support on the GOV.UK website if you feel worried or need assistance attending cervical screening</a>.</p>
+
+        <p><b>More information</b></p>
+
+        <p>The nurse or doctor who does your screening test will tell you how and when you can expect to get your result, and they will also be told your result.</p>
+
+        <p>Tell your GP surgery if you change your address or contact details.</p>
+
+        <p>Speak to a GP as soon as possible if you have any of the following symptoms, regardless of your cervical screening history:</p>
+
+        <ul>
+          <li>vaginal bleeding that's unusual for you - including bleeding during or after sex, between your periods or after the menopause, or heavier periods than usual</li>
+          <li>changes to your vaginal discharge</li>
+          <li>pain during sex</li>
+          <li>pain in your lower back, between your hip bones (pelvis), or in your lower tummy</li>
+        </ul>
+
+        <p>Learn more about <a href="/">NHS cervical screening and HPV</a>, including what happens at your appointment and how to book.</p>
+
+        <p>If you have any concerns or questions about cervical screening, speak with a GP</p>
+
+        <p><a href="/">Read about how we use and protect your information</a>, or <a href="/">opt out</a>.</p>
+      
+      </div>
+
+    </div>
+  </div>
+
+  {% endblock %}
+
+  {% block pageScripts %}
+    <script>
+      // Function to get the current date and time in "Sent DD Month YYYY at HH:MM" format
+      function getCurrentDateTime() {
+            let currentDateTime = new Date();
+            let day = currentDateTime.getDate();
+            let month = currentDateTime.toLocaleString('default', { month: 'long' }); // Gets the full month name
+            let year = currentDateTime.getFullYear();
+            let hours = currentDateTime.getHours();
+            let minutes = currentDateTime.getMinutes();
+
+            // Determine AM or PM
+            let period = hours >= 12 ? 'pm' : 'am';
+
+            // Convert to 12-hour format
+            hours = hours % 12;
+            hours = hours ? hours : 12; // The hour '0' should be '12' (midnight)
+
+            // Ensure two digits for day, hours, and minutes
+            day = day < 10 ? '0' + day : day;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+
+            // Format the date and time as "Sent DD Month YYYY at HH:MM AM/PM"
+            let formattedDateTime = 'Sent ' + day + ' ' + month + ' ' + year + ' at ' + hours + ':' + minutes + ' ' + period;
+            return formattedDateTime;
+        }
+
+      // Display the current date and time in the <p> tag with id "current-time"
+      document.getElementById("current-time").textContent = getCurrentDateTime();
+  </script>
+{% endblock %}
+
