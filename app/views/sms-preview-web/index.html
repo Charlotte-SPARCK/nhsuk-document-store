@@ -1,0 +1,90 @@
+{% extends 'layout.html' %}
+
+
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block pageTitle %}
+  NHS Document Store
+{% endblock %}
+
+{% block beforeContent %}
+  {{ backLink({
+    "text": "Back",
+    "classes": "nhsuk-u-margin-top-4 nhsuk-u-margin-bottom-0",
+    href: "/"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-three-quarters">
+
+      <h1>SMS Preview - Web Login</h1>
+        <ul clas="nhsuk-list">
+          <form id="osForm" method="POST">
+            <li>
+              <a href="notification?sms=1" id="sms-preview1">SMS Preview - Extended URL</a>
+            </li>
+            <li>
+              <a href="notification?sms=2" id="sms-preview2">SMS Preview - Short URL</a>
+            </li>
+          </form>
+        </ul>
+
+
+    </div>
+  </div>
+{% endblock %}
+
+
+
+{% block pageScripts %}
+<script>
+  // Function to detect the operating system
+  function detectOperatingSystem() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+      // Check for iOS
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+          return "iOS";
+      }
+      // Check for Android
+      else if (/android/i.test(userAgent)) {
+          return "Android";
+      }
+      // If neither, return Unknown
+      else {
+          return "Unknown OS";
+      }
+  }
+
+
+    // Function to update the link URLs based on OS
+      function updateLinks() {
+      const os = detectOperatingSystem();
+
+      // const notification = document.getElementById('notification');
+      const noifyimg = document.querySelector('#notification img');
+
+      // Modify the URLs based on the OS detected
+      if (os === "iOS") {
+        // Change the image source to a new one
+        noifyimg.src = '/images/message_logo.png'; // You can replace with any image URL
+        
+      } else if (os === "Android") {
+        noifyimg.src = '/images/android-sms.png'; // You can replace with any image URL
+
+      } else {
+        // For unknown OS, you can set default URLs
+
+      }
+    }
+
+    // Call the updateLinks function when the page loads
+    window.onload = updateLinks;
+    console.log("Operating System:", detectOperatingSystem(
+
+    ));
+</script>
+{% endblock %}
